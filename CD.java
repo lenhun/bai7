@@ -1,9 +1,13 @@
+import java.util.Scanner;
+
 public class CD {
     private int maCD;
     private String tuaCD;
     private String caSy;
     private int soBaiHat;
     private double giaThanh;
+
+    Scanner sc = new Scanner(System.in);
 
     public CD(){
 
@@ -46,12 +50,12 @@ public class CD {
     }
 
     public void setSoBaiHat(int soBaiHat) {
-        if (soBaiHat>0){
-            this.soBaiHat=soBaiHat;
-        }
-        else{
-            System.out.println("loi");
-        }
+        while (soBaiHat<=0){
+        System.out.println("vui long nhap lai:");
+        System.out.println("Nhap so bai hat:");
+        soBaiHat= sc.nextInt();
+       }
+       this.soBaiHat=soBaiHat;
     }
 
     public double getGiaThanh() {
@@ -59,13 +63,14 @@ public class CD {
     }
 
     public void setGiaThanh(double giaThanh) {
-        if(giaThanh>0){
-           this.giaThanh = giaThanh;
+       while (giaThanh<=0){
+        System.out.println("vui long nhap lai:");
+        System.out.println("Nhap gia thanh:");
+        giaThanh= sc.nextDouble();
+       }
+       this.giaThanh=giaThanh;
         }
-        else{
-            System.out.println("loi");
-        }
-    }
+
 
     @Override
     public String toString() {
